@@ -1,42 +1,45 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const GlobalStyles = createGlobalStyle`
- /* @font-face {
-   font-family: "Kumbh Sans";
-   src: url('/static/KumbhSans-Medium.ttf');
-   font-weight: normal;
-   font-style: normal;
- } */
-html {
-    --orange: hsl(26, 100%, 55%);
-    --pale-orange: hsl(25, 100%, 94%);
-
-    --dark-blue: hsl(220, 13%, 13%);
-    --dark-grayish-blue: hsl(219, 9%, 45%);
-    --grayish-blue: hsl(220, 14%, 75%);
-
-    --light-grayish-blue: hsl(223, 64%, 98%);
-    --white: hsl(0, 0%, 100%);
-    --black: hsl(0, 0%, 0%);
-    --maxWidth: 1000px;
-    --bs: 0 12px 24px 0 rgba(0,0,0,0.09);
-    font-family: --apple-system, 
-    BlinkMacSystemFont, 'Segoe UI', 
-    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
-    'Helvetica Neue', sans-serif; 
+/* reset */
+* {
+  margin: 0;
+  padding: 0;
 }
-body {
-    margin: 0;
-    padding: 0;
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* make images easier to work with */
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+/* make forms easier to work with */
+input, button, textarea, select {
+  font: inherit;
+}
+/* remove animations for people who turned them off */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 a {
+  font-family: inherit;
   color: inherit;
   text-decoration: none;
   :hover {
       text-decoration: underline;
   }
 }
-*, *::before, *::after {
-  box-sizing: border-box;
+/* end of reset */
+html {
+    font-family: --apple-system, 
+    BlinkMacSystemFont, 'Segoe UI', 
+    Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 
+    'Helvetica Neue', sans-serif; 
 }
 `
